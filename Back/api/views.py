@@ -10,7 +10,7 @@ from .serializers import SkinTypeSerializer, AnswerSerializer, UserTestResultSer
 from .utils import get_medicines_for_user
 
 
-# Create your views here.
+
 def profile_view(request):
     return render(request, 'api/profile.html')
 
