@@ -50,21 +50,29 @@ class Answer(models.Model):
     def __str__(self):
         return self.text
 
+class CategoryProduct(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(default='')
+
+    def __str__(self):
+        return self.name
 
 class Medicine(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     treats = models.ForeignKey(Answer, on_delete=models.CASCADE, default=None, null=True)
     img = models.TextField(default='')
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    category = models.ForeignKey(CategoryProduct, on_delete=models.CASCADE, default=1)
 
-    def __str__(self):
+def __str__(self):
         return self.name
 
 
 class UserTestResult(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     answers = models.JSONField()
-    time = models.TimeField(auto_now=True)
+    time = models.TimeField()
     medicine = models.TextField(default='')
 
 

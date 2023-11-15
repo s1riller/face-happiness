@@ -1,11 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
+from .views import *
+from .serializers import UserTestResultListView
 
-from api.serializers import UserTestResultListView
-from api.views import *
 from import_export.admin import ImportMixin
 
-from api.views import profile_view
+
 
 urlpatterns = [
     path('profile',UserInfoView.as_view(), name="profile"),

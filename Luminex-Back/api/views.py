@@ -71,6 +71,9 @@ class UserTestResultView(APIView):
 class MedicineListView(generics.ListAPIView):
     serializer_class = MedicineSerializer
 
+    authentication_classes = []
+    permission_classes = []
+
     def get_queryset(self):
 
         medicines = Medicine.objects.all()

@@ -1,10 +1,12 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from api.resource import MedicineResource  # Импортируйте MedicineResource из правильного места
+from .resource import MedicineResource  # Импортируйте MedicineResource из правильного места
 
-from .models import User, Imperfection, SkinType, Question, Answer, Medicine, UserTestResult
+from .models import User, Imperfection, SkinType, Question, Answer, Medicine, UserTestResult,CategoryProduct
+
 
 admin.site.register(User)
+admin.site.register(CategoryProduct)
 admin.site.register(Imperfection)
 admin.site.register(SkinType)
 admin.site.register(Question)
@@ -13,5 +15,6 @@ admin.site.register(Answer)
 admin.site.register(UserTestResult)
 
 @admin.register(Medicine)
-class MedicineAdmin(ImportExportModelAdmin):  # Используйте ImportExportModelAdmin
-    resource_class = MedicineResource  # Укажите ресурс MedicineResource
+class MedicineAdmin(ImportExportModelAdmin):
+    resource_class = MedicineResource
+    list_display = ('name', 'description', 'treats', 'img', 'price', 'category')

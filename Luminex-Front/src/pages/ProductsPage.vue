@@ -35,6 +35,7 @@
 
 
       <section class="w-100  p-4" style="background-color: #eee; border-radius: .5rem .5rem 0 0;">
+
         <div class="row justify-content-center mb-3" v-for="(product, index) in productList" :key="index">
           <div class="col-md-12">
             <div class="card shadow-0 border rounded-3">
@@ -125,6 +126,7 @@ export default {
       'getProductList', // Имя вашего геттера из модуля
     ]),
     productList() {
+      console.log("231")
       return this.getProductList;
     },
   },
