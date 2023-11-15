@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    container_name: django
+    command: python manage.py runserver
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/app
