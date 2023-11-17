@@ -11,8 +11,7 @@ from .serializers import SkinTypeSerializer, AnswerSerializer, UserTestResultSer
 from .utils import get_medicines_for_user
 
 
-from djoser.views import UserCreateView
-from .serializers import CustomUserCreateSerializer
+
 
 
 # Create your views here.
@@ -100,6 +99,5 @@ class UserTestResultDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UserTestResultSerializer
 
 
-class CustomUserCreateView(UserCreateView):
-    serializer_class = CustomUserCreateSerializer
+
 

@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="daefaf0f-5d37-42e5-b0ed-6a51dd611dba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../luminex-redesign-front/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/components/Footer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/components/Modal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/fetch/FetchProduct.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/views/Shop.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/views/Test.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/FetchMedicines.js" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/FetchMedicines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/FetchUserResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/FetchUserResults.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/GetData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/GetData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/ProfileModule.js" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/ProfileModule.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/typeFace.js" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/store/modules/typeFace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luminex-redesign-front/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../luminex-redesign-front/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/nanoid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/nanoid.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/nanoid.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/parser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/parser.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/.bin/parser.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/.package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@babel/parser/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@babel/parser/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@babel/parser/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@babel/parser/bin/babel-parser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@babel/parser/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@babel/parser/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@babel/parser/lib/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@babel/parser/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@babel/parser/typings/babel-parser.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@jridgewell/sourcemap-codec/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@jridgewell/sourcemap-codec/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@jridgewell/sourcemap-codec/dist/sourcemap-codec.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@jridgewell/sourcemap-codec/dist/sourcemap-codec.mjs.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@jridgewell/sourcemap-codec/dist/sourcemap-codec.umd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@jridgewell/sourcemap-codec/dist/sourcemap-codec.umd.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@jridgewell/sourcemap-codec/dist/types/sourcemap-codec.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@jridgewell/sourcemap-codec/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-core/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-core/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-core/dist/compiler-core.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-core/dist/compiler-core.cjs.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-core/dist/compiler-core.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-core/dist/compiler-core.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-core/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-core/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/dist/compiler-dom.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/dist/compiler-dom.cjs.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/dist/compiler-dom.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/dist/compiler-dom.esm-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/dist/compiler-dom.esm-browser.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/dist/compiler-dom.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/dist/compiler-dom.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/dist/compiler-dom.global.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-dom/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-sfc/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-sfc/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-sfc/dist/compiler-sfc.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-sfc/dist/compiler-sfc.esm-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-sfc/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-ssr/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-ssr/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-ssr/dist/compiler-ssr.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-ssr/dist/compiler-ssr.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/compiler-ssr/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/api/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/api/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/api/component.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/api/context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/api/hooks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/api/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/api/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/const.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/proxy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/cjs/time.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/api.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/app.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/component.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/component.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/context.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/hooks.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/hooks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/util.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/api/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/const.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/const.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/plugin.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/proxy.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/proxy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/time.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/lib/esm/time.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/devtools-api/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity-transform/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity-transform/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity-transform/dist/reactivity-transform.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity-transform/dist/reactivity-transform.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity-transform/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/dist/reactivity.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/dist/reactivity.cjs.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/dist/reactivity.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/dist/reactivity.esm-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/dist/reactivity.esm-browser.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/dist/reactivity.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/dist/reactivity.global.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/reactivity/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-core/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-core/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-core/dist/runtime-core.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-core/dist/runtime-core.cjs.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-core/dist/runtime-core.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-core/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-core/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/dist/runtime-dom.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/dist/runtime-dom.cjs.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/dist/runtime-dom.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/dist/runtime-dom.esm-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/dist/runtime-dom.esm-browser.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/dist/runtime-dom.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/dist/runtime-dom.global.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/runtime-dom/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/server-renderer/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/server-renderer/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/server-renderer/dist/server-renderer.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/server-renderer/dist/server-renderer.cjs.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/server-renderer/dist/server-renderer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/server-renderer/dist/server-renderer.esm-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/server-renderer/dist/server-renderer.esm-browser.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/server-renderer/dist/server-renderer.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/server-renderer/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/server-renderer/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/shared/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/shared/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/shared/dist/shared.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/shared/dist/shared.cjs.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/shared/dist/shared.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/shared/dist/shared.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/shared/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/@vue/shared/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/bench.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/abort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/defer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/iterate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/readable_asynckit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/readable_parallel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/readable_serial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/readable_serial_ordered.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/state.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/streamify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/lib/terminator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/parallel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/serial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/serialOrdered.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/asynckit/stream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/MIGRATION_GUIDE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/SECURITY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/axios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/axios.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/axios.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/axios.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/browser/axios.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/browser/axios.cjs.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/esm/axios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/esm/axios.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/esm/axios.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/esm/axios.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/node/axios.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/dist/node/axios.cjs.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/index.d.cts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/adapters/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/adapters/adapters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/adapters/http.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/adapters/xhr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/axios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/cancel/CancelToken.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/cancel/CanceledError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/cancel/isCancel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/core/Axios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/core/AxiosError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/core/AxiosHeaders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/core/InterceptorManager.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/core/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/core/buildFullPath.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/core/dispatchRequest.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/core/mergeConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/core/settle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/core/transformData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/defaults/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/defaults/transitional.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/env/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/env/classes/FormData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/env/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/AxiosTransformStream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/AxiosURLSearchParams.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/HttpStatusCode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/ZlibHeaderTransformStream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/bind.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/buildURL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/callbackify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/combineURLs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/cookies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/deprecatedMethod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/formDataToJSON.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/formDataToStream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/fromDataURI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/isAbsoluteURL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/isAxiosError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/isURLSameOrigin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/null.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/parseHeaders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/parseProtocol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/readBlob.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/speedometer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/spread.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/throttle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/toFormData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/toURLEncodedForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/helpers/validator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/platform/browser/classes/Blob.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/platform/browser/classes/FormData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/platform/browser/classes/URLSearchParams.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/platform/browser/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/platform/common/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/platform/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/platform/node/classes/FormData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/platform/node/classes/URLSearchParams.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/platform/node/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/lib/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/axios/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/combined-stream/License" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/combined-stream/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/combined-stream/lib/combined_stream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/combined-stream/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/combined-stream/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/csstype/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/csstype/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/csstype/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/csstype/index.js.flow" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/csstype/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/delayed-stream/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/delayed-stream/License" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/delayed-stream/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/delayed-stream/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/delayed-stream/lib/delayed_stream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/delayed-stream/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/dist/esm/estree-walker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/dist/esm/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/dist/umd/estree-walker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/src/async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/src/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/src/sync.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/src/walker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/types/async.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/types/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/types/sync.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/types/tsconfig.tsbuildinfo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/estree-walker/types/walker.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/follow-redirects/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/follow-redirects/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/follow-redirects/debug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/follow-redirects/http.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/follow-redirects/https.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/follow-redirects/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/follow-redirects/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/form-data/License" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/form-data/README.md.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/form-data/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/form-data/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/form-data/lib/browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/form-data/lib/form_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/form-data/lib/populate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/form-data/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/dist/magic-string.cjs.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/dist/magic-string.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/dist/magic-string.cjs.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/dist/magic-string.es.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/dist/magic-string.es.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/dist/magic-string.es.mjs.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/dist/magic-string.umd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/dist/magic-string.umd.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/magic-string/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-db/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-db/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-db/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-db/db.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-db/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-db/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-types/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-types/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-types/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-types/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/mime-types/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.browser.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/index.native.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/async/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/bin/nanoid.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.browser.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.d.cts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/nanoid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/non-secure/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/non-secure/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/non-secure/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/non-secure/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/url-alphabet/index.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/url-alphabet/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/nanoid/url-alphabet/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/picocolors.browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/picocolors.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/picocolors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/picocolors/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/at-rule.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/at-rule.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/comment.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/comment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/container.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/container.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/css-syntax-error.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/css-syntax-error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/declaration.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/declaration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/document.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/document.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/fromJSON.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/fromJSON.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/input.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/lazy-result.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/lazy-result.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/list.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/map-generator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/no-work-result.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/no-work-result.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/node.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/parse.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/parse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/parser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/postcss.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/postcss.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/postcss.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/postcss.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/previous-map.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/previous-map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/processor.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/processor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/result.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/result.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/root.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/root.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/rule.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/rule.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/stringifier.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/stringifier.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/stringify.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/stringify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/symbols.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/terminal-highlight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/tokenize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/warn-once.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/warning.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/lib/warning.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/postcss/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/proxy-from-env/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/proxy-from-env/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/proxy-from-env/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/proxy-from-env/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/proxy-from-env/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/proxy-from-env/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/proxy-from-env/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/array-set.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/base64-vlq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/base64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/binary-search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/mapping-list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/quick-sort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/source-map-consumer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/source-map-generator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/source-node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/lib/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/source-map.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/source-map-js/source-map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/compiler-sfc/index.browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/compiler-sfc/index.browser.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/compiler-sfc/index.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/compiler-sfc/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/compiler-sfc/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/compiler-sfc/index.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/compiler-sfc/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/compiler-sfc/register-ts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.cjs.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.esm-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.esm-browser.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.global.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.runtime.esm-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.runtime.esm-browser.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.runtime.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.runtime.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/dist/vue.runtime.global.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/index.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/jsx-runtime/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/jsx-runtime/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/jsx-runtime/index.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/jsx-runtime/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/jsx.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/macros-global.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/macros.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/ref-macros.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/server-renderer/index.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/server-renderer/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/server-renderer/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/server-renderer/index.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vue/server-renderer/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/dist/vuex.cjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/dist/vuex.esm-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/dist/vuex.esm-browser.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/dist/vuex.esm-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/dist/vuex.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/dist/vuex.global.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/dist/vuex.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/types/helpers.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/types/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/types/logger.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node_modules/vuex/types/vue.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2YGPR6FVpj9V2FRXkNXO1ZNJG8d" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Errors",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="npm.npm dev">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:5173">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm dev" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="daefaf0f-5d37-42e5-b0ed-6a51dd611dba" name="Changes" comment="" />
+      <created>1700148931246</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700148931246</updated>
+      <workItem from="1700148932253" duration="1689000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
