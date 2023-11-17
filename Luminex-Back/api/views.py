@@ -6,7 +6,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from .models import SkinType, Question, Answer, UserTestResult, Medicine
 from .resource import MedicineResource
-from .serializers import SkinTypeSerializer, AnswerSerializer, UserTestResultSerializer, MedicineSerializer
+from .serializers import *
 
 from .utils import get_medicines_for_user
 
@@ -98,6 +98,14 @@ class UserTestResultDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = UserTestResult.objects.all()
     serializer_class = UserTestResultSerializer
 
+class CustomUserCreateView(APIView):
+    authentication_classes = []
+    permission_classes = []
+    serializer_class = CustomUserSerializer
 
-
-
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -12,6 +12,7 @@ class CustomUserSerializer(UserSerializer):
         fields = ('id', 'email', 'username', 'password', 'first_name', 'last_name','birth_date')  # Добавьте поля, которые хотите запросить при регистрации
 
 
+
 class SkinTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = SkinType
