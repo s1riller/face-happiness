@@ -2,13 +2,14 @@ from djoser.serializers import UserSerializer
 from rest_framework import serializers, generics
 from .models import User, SkinType, Answer, UserTestResult, Medicine
 from djoser.serializers import UserCreateSerializer
-
+from django.contrib.auth import get_user_model
 
 class CustomUserSerializer(UserSerializer):
     birth_date = serializers.DateField()
 
     class Meta(UserCreateSerializer.Meta):
-        fields = UserCreateSerializer.Meta.fields + ('birth_date',)
+        model = get_user_model()
+        fields = ('id', 'email', 'username', 'password', 'first_name', 'last_name','birth_date')  # Добавьте поля, которые хотите запросить при регистрации
 
 
 class SkinTypeSerializer(serializers.ModelSerializer):

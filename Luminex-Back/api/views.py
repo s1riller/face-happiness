@@ -11,6 +11,10 @@ from .serializers import SkinTypeSerializer, AnswerSerializer, UserTestResultSer
 from .utils import get_medicines_for_user
 
 
+from djoser.views import UserCreateView
+from .serializers import CustomUserCreateSerializer
+
+
 # Create your views here.
 def profile_view(request):
     return render(request, 'api/profile.html')
@@ -95,4 +99,7 @@ class UserTestResultDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = UserTestResult.objects.all()
     serializer_class = UserTestResultSerializer
 
+
+class CustomUserCreateView(UserCreateView):
+    serializer_class = CustomUserCreateSerializer
 
