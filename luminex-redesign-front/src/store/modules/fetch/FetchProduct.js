@@ -1,4 +1,4 @@
-
+// store.js
 import axios from "axios";
 
 export default({
@@ -15,13 +15,9 @@ export default({
     },
 
     actions: {
-        async fetchMedicines({ commit }) {
+        async fetchProducts({ commit }) {
             try {
-                const response = await axios.get('http://185.84.163.151:8000/api/medicines/', {
-                    headers: {
-                        'Authorization': `Token ${localStorage.getItem('token')}`,
-                    },
-                });
+                const response = await axios.get('http://185.84.163.151:8000/api/medicines/');
                 const data = await response.data;
                 commit('setProductList', data);
             } catch (error) {

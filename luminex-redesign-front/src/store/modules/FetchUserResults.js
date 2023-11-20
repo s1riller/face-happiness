@@ -1,6 +1,4 @@
-// store.js
-import Vue from 'vue'
-import Vuex from 'vuex'
+
 import axios from "axios";
 
 
@@ -29,7 +27,7 @@ export default({
         async fetchUserTestResults(context) {
             try {
                 // Запрос на получение ID пользователя
-                const responseProfile = await axios.get('http://127.0.0.1:8000/api/profile', {
+                const responseProfile = await axios.get('http://185.84.163.151:8000/api/profile', {
                     headers: {
                         'Authorization': `Token ${localStorage.getItem('token')}`,
                     },
@@ -40,7 +38,7 @@ export default({
                 }
 
                 // Запрос на получение всех результатов
-                const responseResults = await axios.get('http://127.0.0.1:8000/api/usertestresults/', {
+                const responseResults = await axios.get('http://185.84.163.151:8000/api/usertestresults/', {
                     headers: {
                         'Authorization': `Token ${localStorage.getItem('token')}`,
                     }

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "@/pages/Home"
-import Testing from "@/pages/TestingPage.vue"
+import Testing from "@/views/Test.vue"
 import Performance from "@/pages/PerformancePage.vue"
 import Statistics from "@/pages/ StatisticsPage.vue";
 import Products from "@/pages/ProductsPage.vue";

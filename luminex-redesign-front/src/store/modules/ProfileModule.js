@@ -1,7 +1,6 @@
 // profileModule.js
 
 import axios from 'axios';
-import data from "bootstrap/js/src/dom/data";
 
 export default {
     state:{
@@ -29,7 +28,7 @@ export default {
      actions: {
         async fetchUserDataStore({commit}) {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/profile', {
+                const response = await axios.get('http://185.84.163.151:8000/api/profile', {
                     headers: {
                         'Authorization': `Token ${localStorage.getItem('token')}`
                     }

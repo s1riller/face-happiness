@@ -27,7 +27,7 @@ export default {
 
             // Осуществляем GET-запрос к API для получения вопросов и ответов
             axios
-                .get('http://127.0.0.1:8000/api/questions/', { headers })
+                .get('http://185.84.163.151:8000/api/questions/', { headers })
                 .then((response) => {
                     // Обновляем состояние с полученными данными
                     commit('setQuestions', response.data);

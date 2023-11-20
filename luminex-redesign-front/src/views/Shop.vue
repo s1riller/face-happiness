@@ -2,9 +2,7 @@
   <section class="products section">
     <div class="container">
       <div class="row">
-        <div v-if="loading" class="text-center">
-          <i class="fa fa-spinner fa-spin"></i> Загрузка продуктов...
-        </div>
+
         <div  v-for="product in products" :key="product.id" class="col-md-4">
           <div class="product-item">
             <div class="product-thumb">
@@ -49,30 +47,19 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import axios from 'axios';
 export default {
-  name: 'ShopPage',
+  name: "ShopPage",
   data() {
     return {
       products: [],
-      loading: false,
     };
   },
-  created() {
-    this.fetchProducts(); // Добавьте эту строку
+  computed: {
+    ...mapGetters(['getProductList']),
   },
-  methods: {
-    async fetchProducts() {
-      try {
-        this.loading = true; // Устанавливаем флаг загрузки в true перед запросом
-        const response = await axios.get('http://185.84.163.151:8000/api/medicines/');
-        this.products = response.data;
-      } catch (error) {
-        console.error('Ошибка при получении списка продуктов:', error);
-      } finally {
-        this.loading = false; // Вне зависимости от результата запроса, устанавливаем флаг загрузки в false
-      }
-    },
- }
+  created() {
+
+    this.products = this.getProductList;
+  }
 };
 </script>
