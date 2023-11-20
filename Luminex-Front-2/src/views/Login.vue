@@ -17,20 +17,21 @@
     <div class="checkout shopping">
       <div class="container">
         <div class="row">
-          <div class="col-auto">
+          <div class="col w-100">
             <div class="block billing-details">
               <form class="checkout-form">
                 <div class="form-group">
                   <p>Адрес электронной почты или номер телефона</p>
-                  <input type="text" class="form-control" id="emailOrPhone" placeholder="">
+                  <input v-model="username" type="text" class="form-control" id="emailOrPhone" placeholder="">
                 </div>
                 <div class="form-group">
                   <p>Пароль</p>
-                  <input type="password" class="form-control" id="password" placeholder="">
+                  <input v-model="password" type="password" class="form-control" id="password" placeholder="">
                 </div>
                 <a href="#">Забыли пароль?</a>
                 <div>
-                  <button class="btn btn-success btn-lg">Вход</button>
+                  <button @click.prevent="login" class="btn btn-success btn-lg">Вход</button>
+
                 </div>
                 <p>Нужна учетная запись?<a class="text-info" @click="$router.push({ name: 'Register' })"> Зарегистироваться!</a></p>
               </form>
@@ -44,7 +45,45 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "LoginView",
-}
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    async login() {
+      try {
+        const response = await axios.post(
+            'http://185.84.163.151:8000/auth/token/login/',
+            {
+              username: this.username,
+              password: this.password,
+            }
+        );
+
+        // Обработка успешного ответа от сервера
+        const token = response.data.auth_token;
+
+        // Сохранение токена в локальном хранилище
+        localStorage.setItem("token", token);
+
+        // Редирект на другую страницу, например, 'Home'
+        this.$router.push({ name: 'Home' });
+        setTimeout(() => {
+          location.reload();
+        }, 1000);
+
+      } catch (error) {
+        // Обработка ошибок
+        console.error("Ошибка при авторизации:", error);
+      }
+    },
+  },
+};
+
 </script>

@@ -11,6 +11,19 @@ class CustomUserSerializer(UserSerializer):
         model = get_user_model()
         fields = ('id', 'email', 'username', 'password', 'first_name', 'last_name','birth_date')  # Добавьте поля, которые хотите запросить при регистрации
 
+    def create(self, validated_data):
+           # Извлекаем и удаляем пароль из validated_data
+           password = validated_data.pop('password', None)
+
+           # Создаем пользователя без пароля
+           user = super(CustomUserSerializer, self).create(validated_data)
+
+           # Устанавливаем зашифрованный пароль
+           if password:
+               user.set_password(password)
+               user.save()
+
+           return user
 
 
 class SkinTypeSerializer(serializers.ModelSerializer):
