@@ -16,6 +16,7 @@
     "cors": "^2.8.5",
     "popper.js": "^1.16.1",
     "vue-router": "^4.0.3",
+    "vue-template-compiler": "^2.7.15",
     "vuex": "^4.1.0"
   },
   "devDependencies": {
