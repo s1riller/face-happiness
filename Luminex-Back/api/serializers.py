@@ -35,7 +35,7 @@ class SkinTypeSerializer(serializers.ModelSerializer):
 class AnswerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Answer
-        fields = ['id', 'text']
+        fields = ['id', 'text','img']
 
 
 class UserTestResultSerializer(serializers.ModelSerializer):

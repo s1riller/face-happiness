@@ -1,7 +1,7 @@
 <template>
   <body>
 
-  <section class="page-header" :style="{ backgroundImage: `url('${imageUrl}')` }">
+  <section class="page-header">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -14,7 +14,6 @@
       </div>
     </div>
   </section>
-  Страница аккаунта
   <button @click="Logout" class="btn btn-success text-white rounded-5">Выйти</button>
   </body>
 </template>

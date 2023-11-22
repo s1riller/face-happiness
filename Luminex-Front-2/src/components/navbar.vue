@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-4 col-xs-12 col-sm-4">
           <div class="contact-number">
-            <a href="tel: 89996442072" ><i class="tf-ion-ios-telephone"></i>8-999-644-20-72</a>
+            <a href="tel: 888992001232" ><i class="tf-ion-ios-telephone"></i></a>
           </div>
         </div>
         <div class="col-md-4 col-xs-12 col-sm-4">
@@ -24,8 +24,8 @@
           <!-- Cart -->
           <ul class="navbar navbar-expand-lg w-100 justify-content-around text-center">
             <li class="nav-item dropdown cart-nav dropdown-slide">
-              <a @click="$router.push({name:'Cart'})" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" style="  text-decoration: none; color: inherit;  background-color: transparent;"><i
-                  class="tf-ion-android-cart"></i>Корзина</a>
+<!--              <a @click="$router.push({name:'Cart'})" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" style="  text-decoration: none; color: inherit;  background-color: transparent;"><i-->
+<!--                  class="tf-ion-android-cart"></i>Корзина</a>-->
               <div class="dropdown-menu cart-dropdown">
                 <!-- Cart Item -->
 
@@ -75,17 +75,16 @@
             </li><!-- / Cart -->
 
             <!-- Search -->
-            <li class="nav-item dropdown search dropdown-slide">
-              <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" style="  text-decoration: none; color: inherit;  background-color: transparent;"><i
-                  class="tf-ion-ios-search-strong"></i>Поиск</a>
-              <ul class="dropdown-menu search-dropdown">
-                <li>
-                  <form action="post"><input type="search" class="form-control" placeholder="Ваш запрос..."></form>
-                </li>
-              </ul>
-            </li><!-- / Search -->
+<!--            <li class="nav-item dropdown search dropdown-slide">-->
+<!--              <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" style="  text-decoration: none; color: inherit;  background-color: transparent;"><i-->
+<!--                  class="tf-ion-ios-search-strong"></i>Поиск</a>-->
+<!--              <ul class="dropdown-menu search-dropdown">-->
+<!--                <li>-->
+<!--                  <form action="post"><input type="search" class="form-control" placeholder="Ваш запрос..."></form>-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </li>&lt;!&ndash; / Search &ndash;&gt;-->
             <a v-if="!userToken==''" @click="$router.push({name:'Account'})" data-toggle="dropdown" data-hover="dropdown" style="  text-decoration: none; color: inherit;  background-color: transparent;">
-Вошел
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32" fill="none">
                 <rect width="32" height="32" fill="url(#pattern0)"/>
                 <defs>
@@ -98,7 +97,7 @@
               </svg>
             </a>
             <a v-if="userToken=='' || userToken==null" @click="$router.push({name:'Login'})" data-toggle="dropdown" data-hover="dropdown" style="  text-decoration: none; color: inherit;  background-color: transparent;">
-Не вошел
+
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32" fill="none">
               <rect width="32" height="32" fill="url(#pattern0)"/>
               <defs>
@@ -118,10 +117,10 @@
     <nav class="navbar navigation">
       <div class="container">
         <!--          <a class="navbar-brand" @click="$router.push({ name: 'Home' })">Дом</a>-->
-        <a class="navbar-brand" @click="$router.push({ name: 'Shop' })">Магазин</a>
+        <a class="navbar-brand" @click="$router.push({ name: 'Shop' })">Продукция</a>
         <a class="navbar-brand" @click="$router.push({ name: 'Test' })">Тестирование</a>
-        <a class="navbar-brand" href="#">Элементы</a>
-        <a class="navbar-brand" href="#">Блог</a>
+<!--        <a class="navbar-brand" href="#">Элементы</a>-->
+<!--        <a class="navbar-brand" href="#">Блог</a>-->
 
 
         <!-- Navbar Links -->
