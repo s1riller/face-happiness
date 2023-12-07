@@ -1,0 +1,10 @@
+Subject: Confirm your registration
+
+Hello {{ user.username }},
+
+Thank you for registering on our website. Please click on the link below to confirm your registration:
+
+{{ activate_url }}
+
+Best regards,
+Your Website Team

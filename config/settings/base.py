@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 from decouple import Csv, config
 
@@ -65,8 +66,8 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
-        "APP_DIRS": True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
@@ -163,12 +164,11 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
 # Email
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
+EMAIL_HOST = "smtp-relay.sendinblue.com"
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
 EMAIL_HOST_USER = config("EMAIL_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_PASSWORD")
-
 # Phone number field
 PHONENUMBER_DEFAULT_REGION = "ET"
 
@@ -217,3 +217,8 @@ CACHES = {
 CACHE_MIDDLEWARE_ALIAS = "default"
 CACHE_MIDDLEWARE_SECONDS = 3600
 CACHE_MIDDLEWARE_KEY_PREFIX = ""
+
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = '/'  
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = '/'  
+
