@@ -118,7 +118,9 @@
       <div class="container">
         <!--          <a class="navbar-brand" @click="$router.push({ name: 'Home' })">Дом</a>-->
         <a class="navbar-brand" @click="$router.push({ name: 'Shop' })">Продукция</a>
-        <a class="navbar-brand" @click="$router.push({ name: 'Test' })">Тестирование</a>
+
+        <a v-if="userToken==='' || userToken==='null'"  class="navbar-brand" @click="$router.push({ name: 'Test' })"></a>
+        <a v-if="userToken" class="navbar-brand" @click="$router.push({ name: 'Test' })">Тестирование</a>
 <!--        <a class="navbar-brand" href="#">Элементы</a>-->
 <!--        <a class="navbar-brand" href="#">Блог</a>-->
 

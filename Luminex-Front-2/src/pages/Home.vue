@@ -24,7 +24,7 @@
         </div>
 
         <div v-if="token!=='null'"  class="d-flex flex-column flex-lg-row align-items-md-stretch justify-content-md-center gap-3 mb-4">
-          <button @click.prevent="$router.push({ name: `testing` })" type="button" class="btn bg-light rounded-5">
+          <button @click.prevent="$router.push({ name: `Test` })" type="button" class="btn bg-light rounded-5">
            Пройти тест
           </button>
         </div>
