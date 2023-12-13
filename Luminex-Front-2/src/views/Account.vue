@@ -1,11 +1,66 @@
 <template>
-  <body>
+  <div class="container mt-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <!-- User Test Results Section -->
+      <div
+          class="col"
+          v-for="(result, index) in sortedUserTestResults"
+          :key="index"
+      >
+        <div class="card shadow-sm">
+          <div class="image-collage">
+            <div
+                v-for="(image, imageIndex) in parseMedicineImage(decodeUnicodeEscapes(result.medicine))"
+                :key="imageIndex"
+                class="image"
+            >
+              <img :src="image" :alt="'Image ' + (imageIndex + 1)">
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <ul>
+                <li v-for="item in parseMedicineDescription(result.medicine)">{{ item }}</li>
+              </ul>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" @click="showModal(result)">Посмотреть</button>
+              </div>
+              <small class="text-body-tertiary">{{ index === 0 ? 'Последнее тестирование' : '' }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Modal for Medicine Details -->
+    <modal v-if="show" @close="closeModal">
+      <template v-slot:header>
+        <h2>Проанализировав ваши данные мы готовы предоставить лечение</h2>
+      </template>
+      <template v-slot:body>
+        <h3>Рекомендуемые препараты:</h3>
+        <h4>Количество:{{ selectedMedicines.length }}</h4>
+        <div v-for="(medicine, index) in selectedMedicines" :key="index" class="medicine-item">
+          <img :src="medicine.img" :alt="medicine.name" class="medicine-image">
+          <div class="medicine-details">
+            <h4>{{ medicine.name }}</h4>
+            <p>{{ medicine.description }}</p>
+          </div>
+        </div>
+      </template>
+      <template v-slot:footer>
+        <button @click="closeModal">Закрыть</button>
+      </template>
+    </modal>
+  </div>
+
+  <!-- Page Header Section -->
   <section class="page-header">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-
           <div class="content">
             <h1 class="page-name">С возвращением!</h1>
             <p>Мы рады видеть вас снова!</p>
@@ -15,52 +70,79 @@
     </div>
   </section>
   <button @click="Logout" class="btn btn-success text-white rounded-5">Выйти</button>
-  </body>
+
 </template>
 
 <script>
-import axios from "axios";
-import router from "@/router/router";
+import { mapGetters } from 'vuex';
+import axios from 'axios';
+import Modal from "@/components/Modal.vue";
 
 export default {
-  name: 'AccountPage',
-
+  name: 'CombinedPage',
+  components: {
+    Modal,
+  },
   data() {
     return {
+      show: false,
+      selectedMedicines: [],
       imageUrl: '',
     };
   },
-
+  computed: {
+    ...mapGetters(['getUserTestResults']),
+    sortedUserTestResults() {
+      return this.getUserTestResults.slice().sort(this.compareByIdDesc);
+    },
+  },
+  created() {
+    this.$store.dispatch('fetchUserTestResults');
+  },
   methods: {
+    decodeUnicodeEscapes(text) {
+      return text.replace(/\\u[\dA-Fa-f]{4}/g, function(match) {
+        return String.fromCharCode(parseInt(match.substr(2), 16));
+      });
+    },
+    getRandomItemsFromArray(array, count) {
+      const shuffledArray = array.slice().sort(() => 0.5 - Math.random());
+      return shuffledArray.slice(0, count);
+    },
+    parseMedicineDescription(medicine) {
+      try {
+        const parsedMedicine = JSON.parse(this.decodeUnicodeEscapes(medicine));
+        return this.getRandomItemsFromArray(parsedMedicine.map(medicine => medicine.description), 3);
+      } catch (error) {
+        return ["Данные в обработке"]; // Или другое сообщение об ошибке
+      }
+    },
+    parseMedicineImage(medicine) {
+      try {
+        const parsedMedicine = JSON.parse(this.decodeUnicodeEscapes(medicine));
+        return this.getRandomItemsFromArray(parsedMedicine.map(medicine => medicine.img), 6);
+      } catch (error) {
+        return []; // Или другое сообщение об ошибке
+      }
+    },
+    compareByIdDesc(a, b) {
+      return b.id - a.id;
+    },
     async Logout() {
       localStorage.removeItem('token');
       this.$router.push({ name: 'Home' });
-
-      // Задержка в 1 секунду перед перезагрузкой страницы
       setTimeout(() => {
         location.reload();
       }, 1000);
     },
-
     async fetchRandomImage() {
-      try {
-        const accessKey = 'd8tTcQxso5iX38Zx_Hslrbi1uzkvOvDmtbS8OetWtdo';
-        const response = await axios.get('https://api.unsplash.com/photos/random', {
-          headers: {
-            Authorization: `Client-ID ${accessKey}`,
-          },
-        });
-
-        this.imageUrl = response.data.urls.regular;
-      } catch (error) {
-        console.error('Ошибка при запросе к Unsplash API:', error);
-      }
+      // Code to fetch a random image
     },
   },
-
   mounted() {
-    // Вызов метода для получения случайного изображения при загрузке страницы
     this.fetchRandomImage();
   },
 };
 </script>
+<style>
+</style>

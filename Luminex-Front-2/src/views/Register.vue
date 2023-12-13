@@ -67,7 +67,7 @@ export default {
 
         // Выполнение запроса на регистрацию
         const response = await axios.post(
-            'http://185.84.163.151:8000/api/registeruser/',
+            'http://127.0.0.1:8000/api/registeruser/',
             {
               username: this.username,
               password: this.password,

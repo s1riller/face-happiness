@@ -16,6 +16,9 @@
               </div>
             </div>
             <div v-else class="card-body">
+              <div v-if="loading" class="loader-overlay">
+                <div class="loader">Анализируем ответы...</div>
+              </div>
               <p class="card-text">Тест пройден</p>
               <p class="card-text">Выбранные ответы: {{ formatSelectedAnswers }}</p>
               <div v-if="serverResponse">
@@ -78,7 +81,7 @@ export default {
 
     async getQuestions() {
       try {
-        const response = await axios.get('http://185.84.163.151:8000/api/questions/', {
+        const response = await axios.get('http://127.0.0.1:8000/api/questions/', {
           headers: {
             'Authorization': `Token ${localStorage.getItem('token')}`,
           },
@@ -93,7 +96,7 @@ export default {
         this.loading = true; // Установите loading в true перед началом загрузки
 
         // Запрос, чтобы получить id пользователя
-        const profileResponse = await axios.get('http://185.84.163.151:8000/api/profile', {
+        const profileResponse = await axios.get('http://127.0.0.1:8000/api/profile', {
           headers: {
             'Authorization': `Token ${localStorage.getItem('token')}`
           }
@@ -114,7 +117,7 @@ export default {
           time: new Date().toISOString().slice(11, 23),
         };
 
-        const response = await axios.post('http://185.84.163.151:8000/api/user_test_results/', results, {
+        const response = await axios.post('http://127.0.0.1:8000/api/user_test_results/', results, {
           headers: {
             'Authorization': `Token ${localStorage.getItem('token')}`
           }
@@ -123,7 +126,7 @@ export default {
           setTimeout(resolve, 10000);
         });
         this.loading = false; // Завершите загрузку, установив loading в false
-        this.$router.replace({ name: 'performance' });
+        this.$router.replace({ name: 'Account' });
 
 
         setTimeout(() => {
@@ -140,3 +143,22 @@ export default {
   },
 };
 </script>
+<style>
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.loader {
+  font-size: 2em;
+  color: #333;
+}
+</style>

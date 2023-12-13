@@ -39,7 +39,7 @@ export default {
 
             try {
                 // Регистрация пользователя
-                const registrationResponse = await axios.post('http://185.84.163.151:8000/auth/users/', {
+                const registrationResponse = await axios.post('http://127.0.0.1:8000/auth/users/', {
                     username: username,
                     birth_date: birth_date,
                     password: password,
@@ -51,7 +51,7 @@ export default {
 
                 try {
                     // Авторизация пользователя
-                    const loginResponse = await axios.post('http://185.84.163.151:8000/auth/token/login/', {
+                    const loginResponse = await axios.post('http://127.0.0.1:8000/auth/token/login/', {
                         username: username,
                         password: password,
                     });
@@ -96,7 +96,7 @@ export default {
 
             try {
                 // Авторизация пользователя
-                const loginResponse = await axios.post('http://185.84.163.151:8000/auth/token/login/', {
+                const loginResponse = await axios.post('http://127.0.0.1:8000/auth/token/login/', {
                     username: username,
                     password: password,
                 });

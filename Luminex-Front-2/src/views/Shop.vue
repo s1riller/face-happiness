@@ -65,7 +65,7 @@ export default {
     async fetchProducts() {
       try {
         this.loading = true; // Устанавливаем флаг загрузки в true перед запросом
-        const response = await axios.get('http://185.84.163.151:8000/api/medicines/');
+        const response = await axios.get('http://127.0.0.1:8000/api/medicines/');
         this.products = response.data;
       } catch (error) {
         console.error('Ошибка при получении списка продуктов:', error);

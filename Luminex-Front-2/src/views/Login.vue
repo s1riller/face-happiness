@@ -59,7 +59,7 @@ export default {
     async login() {
       try {
         const response = await axios.post(
-            'http://185.84.163.151:8000/auth/token/login/',
+            'http://127.0.0.1:8000/auth/token/login',
             {
               username: this.username,
               password: this.password,
