@@ -60,6 +60,6 @@ class MedicineSerializer(serializers.ModelSerializer):
         model = Medicine
         fields = '__all__'
 
-
-
-
+class RatingSerializer(serializers.Serializer):
+    testId = serializers.IntegerField()
+    rating = serializers.IntegerField()

@@ -15,4 +15,5 @@ urlpatterns = [
     path('usertestresults2/', UserTestResultList.as_view(), name='usertestresult-list'),
     # path('usertestresults/<int:pk>/', UserTestResultDetail.as_view(), name='usertestresult-detail'),
     path('registeruser/', CustomUserCreateView.as_view(), name='user-create'),
+    path('rate_recomendation/', RateRecomendationView.as_view(), name='user-create'),
 ]

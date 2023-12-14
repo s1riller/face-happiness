@@ -75,6 +75,9 @@ class UserTestResult(models.Model):
     answers = models.JSONField()
     time = models.TimeField()
     medicine = models.TextField(default='')
+    rate = models.IntegerField(null=True, blank=True, default=0)
+
+
 
 
 
