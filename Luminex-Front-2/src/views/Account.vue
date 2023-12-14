@@ -29,6 +29,12 @@
               </div>
               <small class="text-body-tertiary">{{ index === 0 ? 'Последнее тестирование' : '' }}</small>
             </div>
+
+            <div class="ml-auto">
+              <p>Оценка рекомендации</p>
+              <Rating v-model="result.rate" :cancel="false" @click="updateRateOnServer(result.id,result.rate, $event)" />
+
+            </div>
           </div>
         </div>
       </div>
@@ -74,32 +80,86 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters,mapMutations } from 'vuex';
 import axios from 'axios';
 import Modal from "@/components/Modal.vue";
+import StarRating from "@/components/StarRating.vue";
+import Rating from 'primevue/rating';
 
 export default {
   name: 'CombinedPage',
   components: {
+    StarRating,
     Modal,
+    Rating,
   },
   data() {
     return {
       show: false,
       selectedMedicines: [],
       imageUrl: '',
+      value: null,
+      ratings: [],
     };
   },
+
   computed: {
     ...mapGetters(['getUserTestResults']),
+
     sortedUserTestResults() {
       return this.getUserTestResults.slice().sort(this.compareByIdDesc);
     },
+
   },
   created() {
     this.$store.dispatch('fetchUserTestResults');
   },
   methods: {
+    setRateResult(resultIndex, rate) {
+      this.$store.commit('setRateResult', { resultIndex, rate });
+    },
+
+    updateRateOnServer(resultId, rate) {
+      this.$store.dispatch('updateRateOnServer', { resultId, rate });
+    },
+    getRate() {
+      for (const el of this.sortedUserTestResults) {
+        // Создаем объект с id и value
+        const ratingObj = {
+          id: el.id,
+          value: el.rate,
+        };
+        // Добавляем объект в массив ratings
+        this.ratings.push(ratingObj);
+      }
+    },
+    async handleRatingSelected(result, rating, index) {
+      // Отправить оценку на сервер для блока с индексом 'index'
+      try {
+        const response = await axios.post('http://127.0.0.1:8000/api/rate_recomendation/', {
+          testId: result.id,
+          rating: this.ratings[result.id],
+        }, {
+          headers: {
+            'Authorization': `Token ${localStorage.getItem('token')}`
+          }
+        });
+        // Обновить оценку в массиве 'ratings'
+        this.$set(this.ratings, index, rating);
+        this.ratings[result.id] = rating
+        // Handle the server response, e.g., show a success message
+        console.log('Rating sent successfully:', response.data);
+      } catch (error) {
+        console.error('Error sending rating:', error);
+      }
+    },
+    showModal(result) {
+      this.selectedMedicines = JSON.parse(this.decodeUnicodeEscapes(result.medicine));
+      this.show = true; // Показать модальное окно
+    },
+    closeModal() {
+      this.show = false; // Закрыть модальное окно
+    },
     decodeUnicodeEscapes(text) {
       return text.replace(/\\u[\dA-Fa-f]{4}/g, function(match) {
         return String.fromCharCode(parseInt(match.substr(2), 16));
@@ -141,6 +201,7 @@ export default {
   },
   mounted() {
     this.fetchRandomImage();
+    this.getRate();
   },
 };
 </script>

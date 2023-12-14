@@ -194,6 +194,7 @@
 </template>
 
 <script>
+
 import { mapGetters } from 'vuex'
 export default {
   name: 'HomePage', // Используйте многословное имя для компонента
@@ -202,6 +203,8 @@ export default {
       products: []
     }
   },
+
+
   computed: {
     ...mapGetters(['getProductList']),
   },

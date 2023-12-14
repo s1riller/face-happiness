@@ -6,6 +6,8 @@ export default {
         password: null,
         token: localStorage.getItem('token') || '',
         username: null, // Здесь будет храниться информация о пользователе
+        first_name: null, // Здесь будет храниться информация о пользователе
+        last_name: null, // Здесь будет храниться информация о пользователе
         error: null
     },
     getters: {
@@ -22,6 +24,8 @@ export default {
         setUserData(state, userData) {
             state.username = userData.username;
             state.password = userData.password;
+            state.first_name = userData.first_name;
+            state.last_name = userData.last_name;
         },
         setError(state,error){
             state.error = error
@@ -119,5 +123,6 @@ export default {
                 commit('setError', 'Произошла ошибка при авторизации.');
             }
         },
+
     },
 };

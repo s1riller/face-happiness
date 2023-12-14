@@ -8,6 +8,8 @@ export default {
         user: {
             username: '', // Имя пользователя
             birth_date: '', // Дата рождения пользователя
+            first_name: '', // Здесь будет храниться информация о пользователе
+            last_name: '', // Здесь будет храниться информация о пользователе
         },
         error: null, // Ошибка, если есть
     },
@@ -16,12 +18,18 @@ export default {
        getUserName(state) {
            return state.user.username;
        },
-    },
+       getUserDataProfile(state) {
+           return state.user;
+       }
+   },
 
    mutations: {
         setUserData(state, userData) {
             state.user.username = userData.username;
             state.user.birth_date = userData.birth_date;
+            state.user.first_name = userData.first_name;
+            state.user.last_name = userData.last_name;
+
         },
 
     },

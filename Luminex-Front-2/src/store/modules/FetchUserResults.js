@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 import axios from "axios";
 
 
-export default({
+export default ({
     state: {
         id: null,
         userTestResults: []
@@ -13,6 +13,9 @@ export default({
         getUserName: (state) => state.user.username,
         getUserId: (state) => state.id,
         getUserTestResults: (state) => state.userTestResults,
+        getUserTestRatings(state) {
+            return state.userTestResults.map((result) => result.rate);
+        },
     },
     mutations: {
         setId(state, id) {
@@ -23,6 +26,9 @@ export default({
         },
         filterUserTestResults(state) {
             state.userTestResults = state.userTestResults.filter(result => result.user === state.id);
+        },
+        setRateResult(state,rate){
+            state.userTestResults.rate = rate
         }
     },
     actions: {
@@ -53,6 +59,23 @@ export default({
             } catch (error) {
                 console.error(error);
             }
-        }
+        },
+        async updateRateOnServer(context, { resultId, rate }) {
+            try {
+                const response = await axios.post('http://127.0.0.1:8000/api/rate_recomendation/', {
+                    testId:resultId,
+                    rating:rate
+                }, {
+                    headers: {
+                        'Authorization': `Token ${localStorage.getItem('token')}`
+                    }
+                });
+
+                // Обновите оценку в состоянии Vuex, если успешно
+                context.commit('setRateResult', { resultId, rate });
+            } catch (error) {
+                console.error('Error updating rate:', error);
+            }
+        },
     }
 });
