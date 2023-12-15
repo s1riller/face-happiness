@@ -10,6 +10,7 @@ import Shop from "@/views/Shop.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import Account from "@/views/Account.vue";
+import Profile from "@/views/Profile.vue"
 const routes = [
   { path: "/", component: Home, name:'Home' },
   { path: "/Test", component: Testing, name:'Test' },
@@ -20,6 +21,7 @@ const routes = [
   { path: '/Login', component: Login, name: 'Login' },
   { path: '/Register', component: Register, name: 'Register' },
   { path: '/Account', component: Account, name: 'Account' },
+  { path: '/Profile', component: Profile, name: 'Profile' },
 
 ];
 

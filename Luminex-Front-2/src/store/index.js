@@ -6,6 +6,7 @@ import GetData from "@/store/modules/GetData"
 import FetchUserResults from "@/store/modules/FetchUserResults";
 import FetchMedicines from "@/store/modules/FetchMedicines";
 import FetchProduct from "@/store/modules/FetchProduct";
+import Cart from "@/store/modules/Cart";
 export default  new Vuex.Store({
-    modules:{Signup,ProfileModule,GetData,FetchUserResults,FetchMedicines,FetchProduct}
+    modules:{Signup,ProfileModule,GetData,FetchUserResults,FetchMedicines,FetchProduct,Cart}
 });

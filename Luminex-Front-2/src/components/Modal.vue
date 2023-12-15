@@ -24,6 +24,9 @@
 <script>
 export default {
   name: 'modal',
+  props:{
+    selectedProduct: Object,
+  },
   methods: {
     closeModal() {
       this.$emit('close');
