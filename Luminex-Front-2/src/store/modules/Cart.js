@@ -13,10 +13,17 @@ export default {
         cartTotal(state) {
             return state.cart.reduce((total, item) => total + item.price * item.quantity, 0);
         },
+        cartItemIdsAndQuantities(state) {
+            return state.cart.map(item => ({
+                product: item.id,
+                quantity: item.quantity,
+            }));
+        }
     },
     mutations: {
         // Мутация для добавления товара в корзину
         addToCart(state, product) {
+            console.log(product)
             const existingProduct = state.cart.find(item => item.id === product.id);
 
             if (existingProduct) {
@@ -26,10 +33,12 @@ export default {
                 // Если товара нет в корзине, добавляем его
                 state.cart.push({ ...product, quantity: 1 });
             }
+            localStorage.setItem('cart', JSON.stringify(state.cart));
         },
         // Мутация для удаления товара из корзины
         removeFromCart(state, productId) {
             state.cart = state.cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(state.cart));
         },
         // Мутация для изменения количества товара в корзине
         updateCartItemQuantity(state, { productId, quantity }) {
@@ -37,6 +46,17 @@ export default {
             if (product) {
                 product.quantity = quantity;
             }
+            localStorage.setItem('cart', JSON.stringify(state.cart));
+        },
+        setCartFromLocalStorage(state) {
+            const savedCart = localStorage.getItem('cart');
+            if (savedCart) {
+                state.cart = JSON.parse(savedCart);
+            }
+        },
+        clearCart(state) {
+            state.cart = []; // Устанавливаем корзину в пустой массив
+            localStorage.setItem('cart', JSON.stringify(state.cart)); // Обновляем корзину в localStorage
         },
     },
     actions: {
@@ -61,6 +81,9 @@ export default {
         // Действие для изменения количества товара в корзине
         updateCartQuantity({ commit }, { productId, quantity }) {
             commit('updateCartItemQuantity', { productId, quantity });
+        },
+        clearCart({ commit }) {
+            commit('clearCart'); // Вызываем мутацию clearCart
         },
     },
 };

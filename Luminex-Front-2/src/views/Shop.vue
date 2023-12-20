@@ -1,10 +1,20 @@
 <template>
+  <div v-if="this.is_admin()" class="d-flex justify-content-center align-items-center">
+    <button class="btn d-flex justify-content-center align-items-center" @click="$router.push({ name: 'AddProduct' })">
+    <span class="material-icons">
+      add_circle_outline
+    </span>
+      Добавить товар
+    </button>
+  </div>
+
+
   <modal v-if="show" @close="closeModal">
     <template v-slot:body>
       <div v-if="selectedProduct">
         <h4>{{ selectedProduct.name }}</h4>
         <p>{{ selectedProduct.description }}</p>
-        <img :src="selectedProduct.img" class="product-thumb" alt="" style="width:550px;height:auto">
+        <img :src="selectedProduct.img" alt="" class="product-thumb" style="width:550px;height:auto">
 
         <div>
           <p>{{ selectedProduct.price }}$</p>
@@ -18,11 +28,15 @@
            <span class="material-icons">
 favorite_border
 </span>
-        <span class="material-icons">
-shopping_cart
-</span>
+
+        <button class="btn" @click="addToCart(selectedProduct)">
+    <span class="material-icons">
+      shopping_cart
+    </span>
+        </button>
+
       </div>
-      <button @click="closeModal" class="btn">ОК</button>
+      <button class="btn" @click="closeModal">ОК</button>
     </template>
   </modal>
   <section class="products section">
@@ -34,7 +48,7 @@ shopping_cart
         <div v-for="product in products" :key="product.id" class="col-md-4">
           <div class="product-item">
             <div class="product-thumb">
-              <img :src="product.img" alt="product-img" class="img-responsive"/>
+              <img :src="product.img" alt="Потеряли изобажение товара" class="img-responsive"/>
               <div class="preview-meta">
                 <ul>
                   <li @click="showModal(product)">
@@ -49,9 +63,11 @@ favorite_border
                   </li>
                   <li>
 
-                    <span class="material-icons">
+        <button class="btn" @click="addToCart(product)">
+        <span class="material-icons">
 shopping_cart
 </span>
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -73,11 +89,16 @@ shopping_cart
     </div>
   </section>
 
+  <div v-if="showAddToCartNotification" class="notification">
+    <p class="text-white">Товар добавлен в корзину </p>
+    <p class="text-white">{{addedProduct}}</p>
+  </div>
 </template>
 
 <script>
 import axios from 'axios';
 import Modal from "@/components/Modal.vue";
+import {mapGetters} from "vuex";
 
 export default {
   name: 'ShopPage',
@@ -90,12 +111,15 @@ export default {
       products: [],
       loading: false,
       selectedProduct: null,
+      showAddToCartNotification:false,
+      addedProduct: null,
     };
   },
   created() {
     this.fetchProducts(); // Добавьте эту строку
   },
   methods: {
+    ...mapGetters(['is_admin']),
     showModal(product) {
       console.log(product)
       this.selectedProduct = product;
@@ -113,6 +137,24 @@ export default {
         console.error('Ошибка при получении списка продуктов:', error);
       } finally {
         this.loading = false; // Вне зависимости от результата запроса, устанавливаем флаг загрузки в false
+      }
+    },
+
+    async addToCart(product) {
+      try {
+        // Вызываем мутацию addToCart для добавления товара в корзину
+        this.$store.commit('addToCart', product); // Замените 'addToCart' на имя вашей мутации
+        this.addedProduct = product.name
+        // После успешного добавления товара в корзину, устанавливаем флаг для отображения уведомления
+        this.showAddToCartNotification = true;
+
+        // Устанавливаем таймер для скрытия уведомления через 3 секунды
+        setTimeout(() => {
+          this.showAddToCartNotification = false;
+        }, 1500);
+      } catch (error) {
+        // Обработка ошибок, если что-то пошло не так при добавлении в корзину
+        console.error('Ошибка при добавлении в корзину:', error);
       }
     },
   }
@@ -145,5 +187,15 @@ export default {
 /* Стили для изображения при наведении */
 .product-thumb img:hover {
   transform: scale(1.1); /* Увеличиваем изображение на 10% */
+}
+.notification {
+  /* Стили для уведомления */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(128, 128, 128);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
 }
 </style>

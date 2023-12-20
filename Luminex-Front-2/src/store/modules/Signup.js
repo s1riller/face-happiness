@@ -39,7 +39,7 @@ export default {
     actions: {
         async SignupStore({ commit }, userData) {
             const { username, password, birth_date } = userData;
-            console.log(username, birth_date, password);
+            console.log('Vuex - SignupStore',username, birth_date, password);
 
             try {
                 // Регистрация пользователя

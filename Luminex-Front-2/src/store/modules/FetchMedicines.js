@@ -25,6 +25,7 @@ export default({
                     },
                 });
                 const data = await response.data;
+
                 commit('setProductList', data);
             } catch (error) {
                 console.error('Error fetching medicines:', error);

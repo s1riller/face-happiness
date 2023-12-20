@@ -51,7 +51,7 @@ export default ({
                         'Authorization': `Token ${localStorage.getItem('token')}`,
                     }
                 });
-
+                console.log(responseResults)
                 context.commit('setUserTestResults', responseResults.data);
 
                 // Фильтрация результатов по ID пользователя

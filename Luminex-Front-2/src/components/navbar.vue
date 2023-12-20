@@ -69,6 +69,7 @@
                   <span class="total-price">$1799.00</span>
                 </div>
                 <ul class="text-center cart-buttons">
+
                   <li><a class="btn btn-small" @click="$router.push({name:'Cart'})">View Cart</a></li>
                   <li><a class="btn btn-small btn-solid-border" href="checkout.html">Checkout</a></li>
                 </ul>
@@ -76,18 +77,20 @@
 
             </li><!-- / Cart -->
 
-            <!-- Search -->
-            <!--            <li class="nav-item dropdown search dropdown-slide">-->
-            <!--              <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" style="  text-decoration: none; color: inherit;  background-color: transparent;"><i-->
-            <!--                  class="tf-ion-ios-search-strong"></i>Поиск</a>-->
-            <!--              <ul class="dropdown-menu search-dropdown">-->
-            <!--                <li>-->
-            <!--                  <form action="post"><input type="search" class="form-control" placeholder="Ваш запрос..."></form>-->
-            <!--                </li>-->
-            <!--              </ul>-->
-            <!--            </li>&lt;!&ndash; / Search &ndash;&gt;-->
+
+
             <a v-if="!userToken==''" data-hover="dropdown" data-toggle="dropdown"
-               style="  text-decoration: none; color: inherit;  background-color: transparent;" @click="$router.push({name:'Account'})">
+               style="  text-decoration: none; color: inherit;  background-color: transparent;"
+               @click="$router.push({name:'Cart'})">
+              <span class="material-icons">
+shopping_cart
+</span>
+              {{ cartItems().length }}
+            </a>
+
+            <a v-if="!userToken==''" data-hover="dropdown" data-toggle="dropdown"
+               style="  text-decoration: none; color: inherit;  background-color: transparent;"
+               @click="$router.push({name:'Account'})">
               <svg fill="none" height="32" viewBox="0 0 32 32" width="32"
                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect fill="url(#pattern0)" height="32" width="32"/>
@@ -102,7 +105,8 @@
               </svg>
             </a>
             <a v-if="userToken=='' || userToken==null" data-hover="dropdown" data-toggle="dropdown"
-               style="  text-decoration: none; color: inherit;  background-color: transparent;" @click="$router.push({name:'Login'})">
+               style="  text-decoration: none; color: inherit;  background-color: transparent;"
+               @click="$router.push({name:'Login'})">
 
               <svg fill="none" height="32" viewBox="0 0 32 32" width="32"
                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -132,11 +136,14 @@ shopping_cart
         <a v-if="userToken" class="navbar-brand" @click="$router.push({ name: 'Test' })"><span class="material-icons">
 quiz
 </span> Тестирование</a>
-        <!--        <a class="navbar-brand" href="#">Элементы</a>-->
-        <!--        <a class="navbar-brand" href="#">Блог</a>-->
-<!--        <a class="navbar-brand" @click="$router.push({ name: 'Profile' })"> <span class="material-icons">-->
-<!--sensor_occupied-->
-<!--</span>Моя страница</a>-->
+
+        <a class="navbar-brand"
+           @click="$router.push({ name: 'Reports' })"
+           v-if="this.is_admin()">
+          <span class="material-icons">summarize</span>
+          Отчеты
+        </a>
+
 
         <!-- Navbar Links -->
         <div id="navbar" class="navbar-collapse collapse text-center">
@@ -150,7 +157,8 @@ quiz
 
             <!-- Elements -->
             <li class="dropdown dropdown-slide">
-              <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-delay="350" data-hover="dropdown"
+              <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-delay="350"
+                 data-hover="dropdown"
                  data-toggle="dropdown" href="#!" role="button">Shop <span
                   class="tf-ion-ios-arrow-down"></span></a>
               <div class="dropdown-menu">
@@ -188,7 +196,8 @@ quiz
 
             <!-- Pages -->
             <li class="dropdown full-width dropdown-slide">
-              <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-delay="350" data-hover="dropdown"
+              <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-delay="350"
+                 data-hover="dropdown"
                  data-toggle="dropdown" href="#!" role="button">Pages <span
                   class="tf-ion-ios-arrow-down"></span></a>
               <div class="dropdown-menu">
@@ -243,7 +252,8 @@ quiz
 
             <!-- Blog -->
             <li class="dropdown dropdown-slide">
-              <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-delay="350" data-hover="dropdown"
+              <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-delay="350"
+                 data-hover="dropdown"
                  data-toggle="dropdown" href="#!" role="button">Blog <span
                   class="tf-ion-ios-arrow-down"></span></a>
               <ul class="dropdown-menu">
@@ -277,6 +287,7 @@ quiz
 </template>
 
 <script>
+import {mapGetters,mapActions} from "vuex";
 
 export default {
   name: 'NavBar',
@@ -286,6 +297,21 @@ export default {
       userToken: localStorage.getItem('token'),
     };
   },
+
+  methods: {
+    ...mapGetters(['cartItems', 'getUser', 'is_admin']),
+    ...mapActions(['fetchUserData']),
+
+
+
+  },
+  created() {
+    this.fetchUserData();
+    this.$store.commit('setCartFromLocalStorage');
+
+
+  },
+
 
 
 };

@@ -3,9 +3,9 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <!-- User Test Results Section -->
       <div
-          class="col"
           v-for="(result, index) in sortedUserTestResults"
           :key="index"
+          class="col"
       >
         <div class="card shadow-sm">
           <div class="image-collage">
@@ -14,7 +14,7 @@
                 :key="imageIndex"
                 class="image"
             >
-              <img :src="image" :alt="'Image ' + (imageIndex + 1)">
+              <img :alt="'Image ' + (imageIndex + 1)" :src="image">
             </div>
           </div>
           <div class="card-body">
@@ -25,14 +25,15 @@
             </p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary" @click="showModal(result)">Посмотреть</button>
+                <button class="btn btn-sm btn-outline-secondary" type="button" @click="showModal(result)">Посмотреть
+                </button>
               </div>
               <small class="text-body-tertiary">{{ index === 0 ? 'Последнее тестирование' : '' }}</small>
             </div>
 
             <div class="ml-auto">
               <p>Оценка рекомендации</p>
-              <Rating v-model="result.rate" :cancel="false" @click="updateRateOnServer(result.id,result.rate, $event)" />
+              <Rating v-model="result.rate" :cancel="false" @click="updateRateOnServer(result.id,result.rate, $event)"/>
 
             </div>
           </div>
@@ -46,13 +47,22 @@
         <h2>Проанализировав ваши данные мы готовы предоставить лечение</h2>
       </template>
       <template v-slot:body>
-        <h3>Рекомендуемые препараты:</h3>
-        <h4>Количество:{{ selectedMedicines.length }}</h4>
-        <div v-for="(medicine, index) in selectedMedicines" :key="index" class="medicine-item">
-          <img :src="medicine.img" :alt="medicine.name" class="medicine-image">
-          <div class="medicine-details">
-            <h4>{{ medicine.name }}</h4>
-            <p>{{ medicine.description }}</p>
+        <div class="medicine-container">
+          <h3>Рекомендуемые препараты:</h3>
+          <h4>Количество: {{ selectedMedicines.length }}</h4>
+          <div class="medicine-grid">
+            <div v-for="(medicine, index) in selectedMedicines" :key="index" class="medicine-item">
+              <div class="medicine-card">
+                <img :alt="medicine.name" :src="medicine.img" class="medicine-image">
+                <div class="medicine-details">
+                  <h4>{{ medicine.name }}</h4>
+                  <p>{{ medicine.description }}</p>
+                  <button class="btn add-to-cart" @click="addToCart(medicine)">
+                    <span class="material-icons">shopping_cart</span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </template>
@@ -75,12 +85,13 @@
       </div>
     </div>
   </section>
-  <button @click="Logout" class="btn btn-success text-white rounded-5">Выйти</button>
+  <button class="btn btn-success text-white rounded-5" @click="Logout">Выйти</button>
 
 </template>
 
 <script>
-import { mapGetters,mapMutations } from 'vuex';
+
+import {mapGetters, mapMutations} from 'vuex';
 import axios from 'axios';
 import Modal from "@/components/Modal.vue";
 import StarRating from "@/components/StarRating.vue";
@@ -112,15 +123,16 @@ export default {
 
   },
   created() {
-    this.$store.dispatch('fetchUserTestResults');
+     this.$store.dispatch('fetchUserTestResults');
   },
   methods: {
+    ...mapMutations(['addToCart']),
     setRateResult(resultIndex, rate) {
-      this.$store.commit('setRateResult', { resultIndex, rate });
+      this.$store.commit('setRateResult', {resultIndex, rate});
     },
 
     updateRateOnServer(resultId, rate) {
-      this.$store.dispatch('updateRateOnServer', { resultId, rate });
+      this.$store.dispatch('updateRateOnServer', {resultId, rate});
     },
     getRate() {
       for (const el of this.sortedUserTestResults) {
@@ -161,7 +173,7 @@ export default {
       this.show = false; // Закрыть модальное окно
     },
     decodeUnicodeEscapes(text) {
-      return text.replace(/\\u[\dA-Fa-f]{4}/g, function(match) {
+      return text.replace(/\\u[\dA-Fa-f]{4}/g, function (match) {
         return String.fromCharCode(parseInt(match.substr(2), 16));
       });
     },
@@ -189,8 +201,9 @@ export default {
       return b.id - a.id;
     },
     async Logout() {
+      this.$store.commit('clearCart')
       localStorage.removeItem('token');
-      this.$router.push({ name: 'Home' });
+      this.$router.push({name: 'Home'});
       setTimeout(() => {
         location.reload();
       }, 1000);
@@ -206,4 +219,54 @@ export default {
 };
 </script>
 <style>
+
+.medicine-container {
+  padding: 20px;
+}
+
+.medicine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.medicine-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.medicine-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.medicine-details h4 {
+  margin-top: 10px;
+}
+
+.medicine-details p {
+  color: #666;
+  font-size: 14px;
+}
+
+.add-to-cart {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #45a049;
+}
+
+.material-icons {
+  vertical-align: middle;
+}
 </style>

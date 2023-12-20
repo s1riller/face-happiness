@@ -92,7 +92,7 @@ export default {
       // }
 
       this.isInfoPopupVisible = false
-      console.log(this.userData)
+      // console.log(,this.userData)
       try {
         const response = await axios.put('http://127.0.0.1:8000/api/profile', {
           "first_name": this.first_name,
@@ -127,8 +127,9 @@ export default {
   mounted() {
     this.fetchUserDataStore();
     setTimeout(() => {
-      console.log(this.getUserDataProfile());
-      if (!this.getUserDataProfile().first_name || !this.getUserDataProfile().last_name && !localStorage.getItem('token')) {
+      //console.log(this.getUserDataProfile());
+      if(localStorage.getItem('token')!=null){}
+      if (!this.getUserDataProfile().first_name || !this.getUserDataProfile().last_name ) {
         this.isInfoPopupVisible = true
       }
     }, 5000);
