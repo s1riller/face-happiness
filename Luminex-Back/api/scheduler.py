@@ -17,6 +17,7 @@ handler.setFormatter(formatter)
 # Добавление обработчика к логгеру
 logger.addHandler(handler)
 
+
 def run_take_med_command():
     logger.info("Starting take med processor command...")
     try:
@@ -24,6 +25,7 @@ def run_take_med_command():
         logger.info("Take med processor command finished.")
     except Exception as e:
         logger.error(f"Error in take med processor command: {str(e)}")
+
 
 scheduler = BackgroundScheduler()
 scheduler.add_job(run_take_med_command, 'interval', seconds=10)

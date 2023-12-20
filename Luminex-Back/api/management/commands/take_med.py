@@ -1,8 +1,12 @@
+#Тут менять если ставлю на хостинг
+
 import json
+
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from api.models import Medicine, UserTestResult
+
 
 class Command(BaseCommand):
     help = 'Recommend medicine for user'
@@ -27,10 +31,14 @@ class Command(BaseCommand):
             recommended_medicine_info = []
             for medicine in unique_recommended_medicines:
                 medicine_info = {
+                    "id": medicine.id,
+                    "price": str(medicine.price),
+                    "category": medicine.category.id,
                     "name": medicine.name,
                     "description": medicine.description,
                     "treats": medicine.treats.text,
-                    "img": medicine.img,
+                    "img": 'http://127.0.0.1:8000' + medicine.img.url,
+
                 }
                 recommended_medicine_info.append(medicine_info)
 
