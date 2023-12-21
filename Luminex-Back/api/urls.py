@@ -20,6 +20,7 @@ urlpatterns = [
     path('report/UserTestResultsReport',UserTestResultsReport.as_view()),
     path('report/CustomerBehaviorReport',CustomerBehaviorReport.as_view()),
     path('report/FinancialReportAPIView',FinancialReportAPIView.as_view()),
+    path('report/SoldProducts', SoldProductsAPIView.as_view()),
 
     path('user_test_results/', UserTestResultView.as_view(), name='user-test-results'),
     path('usertestresults/', UserTestResultListView.as_view(), name='usertestresult-list'),

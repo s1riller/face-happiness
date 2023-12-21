@@ -16,7 +16,7 @@ class User(AbstractUser):
     avatar = models.ImageField(
         'Аватар',
         upload_to='avatars/',
-        default='avatars/awesomeAvatar.png',  # Путь к изображению по умолчанию
+        default='avatars/images.png',  # Путь к изображению по умолчанию
         blank=True,
     )
 

@@ -38,7 +38,7 @@ class UserInfoView(APIView):
             'first_name': user.first_name,
             'last_name': user.last_name,
             'date_joined': user.date_joined,
-             'is_admin': user.is_staff,
+            'is_admin': user.is_staff,
         }
         return Response(data)
 
@@ -398,6 +398,7 @@ class CustomerBehaviorReport(APIView):
 
         return Response(report_data, status=status.HTTP_200_OK)
 
+
 class FinancialReportAPIView(APIView):
     def get(self, request):
         # Получение параметров фильтрации (если они есть)
@@ -426,13 +427,23 @@ class FinancialReportAPIView(APIView):
 
         return Response(report, status=status.HTTP_200_OK)
 
+
 class UsersReportAPIView(APIView):
     serializer_class = CustomUserSerializer
     authentication_classes = []
     permission_classes = []
 
-    def get(self,request):
+    def get(self, request):
         users = User.objects.all()
-        serializer = UserReadSerializer(users,many=True,context={'request': request})
+        serializer = UserReadSerializer(users, many=True, context={'request': request})
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
+
+
+class SoldProductsAPIView(APIView):
+    def get(self, request, format=None):
+        sold_items = OrderItem.objects.all()
+        # Pass 'request' in the serializer context
+        serializer = SoldProductSerializer(sold_items, many=True, context={'request': request})
+        return Response(serializer.data)

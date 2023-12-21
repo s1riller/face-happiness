@@ -122,10 +122,43 @@ class UserReadSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ('id', 'email', 'username', 'first_name', 'last_name', 'birth_date', 'avatar_url','last_login')
+        fields = ('id', 'email', 'username', 'first_name', 'last_name', 'birth_date', 'avatar_url', 'last_login')
 
     def get_avatar_url(self, obj):
         request = self.context.get('request')
         if obj.avatar and hasattr(obj.avatar, 'url'):
             return request.build_absolute_uri(obj.avatar.url)
+        return None
+
+
+class OrderReadItemSerializer(serializers.ModelSerializer):
+    avatar_url = serializers.SerializerMethodField()
+
+    class Meta:
+        model = OrderItem
+        fields = ('product', 'avatar_url', 'quantity')
+
+    def get_avatar_url(self, obj):
+        request = self.context.get('request')
+        if obj.product.img and hasattr(obj.product.img, 'url'):
+            return request.build_absolute_uri(obj.product.img.url)
+        return None
+
+
+class SoldProductSerializer(serializers.ModelSerializer):
+    product_name = serializers.CharField(source='product.name')
+    product_description = serializers.CharField(source='product.description')
+    product_price = serializers.DecimalField(source='product.price', max_digits=10, decimal_places=2)
+    product_category = serializers.CharField(source='product.category.name')
+    sale_date = serializers.DateTimeField(source='order.created_at')
+    product_image_url = serializers.SerializerMethodField()
+
+    class Meta:
+        model = OrderItem
+        fields = ['product_name', 'product_description', 'product_price', 'product_category', 'quantity', 'sale_date', 'product_image_url']
+
+    def get_product_image_url(self, obj):
+        request = self.context.get('request')
+        if obj.product.img and hasattr(obj.product.img, 'url'):
+            return request.build_absolute_uri(obj.product.img.url)
         return None
