@@ -1,63 +1,75 @@
 <template>
-
   <div v-if="!isLoading">
-  <div id="sortable" aria-dropeffect="move" class="list list-row card" data-sortable-id="0">
-    <div
-        class="list-item" draggable="true" style=""
-    v-for="user in users"
-        :key="user.id"
-    >
-      <div><a data-abc="true" href="#"><span class="w-40 avatar gd-primary"><img
-          alt="." :src="user.avatar_url"></span></a></div>
-      <div class="flex">
-        <!-- Добавлена проверка на наличие user перед попыткой чтения first_name или last_name -->
-        <a class="item-author text-color" data-abc="true" href="#" v-if="user">{{ user.first_name }} {{ user.last_name }}</a>
-        <a class="item-author text-color" data-abc="true" href="#" v-if="user && !user.first_name || !user.last_name">Не знаем как зовут пользователя</a>
-        <div class="item-except text-muted text-sm h-1x">For what reason would it be advisable for me to think about
-          business content?
+    <div id="sortable" aria-dropeffect="move" class="list list-row card" data-sortable-id="0">
+      <div
+          v-for="user in users" :key="user.id" class="list-item"
+          draggable="true"
+          style=""
+      >
+        <div><a data-abc="true" href="#"><span class="w-40 avatar gd-primary"><img
+            :src="user.avatar_url" alt="."></span></a></div>
+        <div class="flex">
+          <!-- Добавлена проверка на наличие user перед попыткой чтения first_name или last_name -->
+          <a v-if="user" class="item-author text-color" data-abc="true" href="#">{{ user.first_name }} {{
+              user.last_name
+            }}</a>
+          <a v-if="user && !user.first_name || !user.last_name" class="item-author text-color" data-abc="true" href="#">Не
+            знаем как зовут пользователя</a>
+          <div class="item-except text-muted text-sm h-1x">
+          <span class="material-icons">
+            alternate_email
+          </span>
+            {{ user.username }}
+            {{ ageInfo(user.birth_date) }}
+          </div>
+
         </div>
-      </div>
-      <div class="no-wrap">
-        <div class="item-date text-muted text-sm d-none d-md-block"> Последний вход: {{ lastLoginInfo(user.last_login) }}</div>
-      </div>
-      <div>
-        <div class="item-action dropdown">
-          <a class="text-muted" data-abc="true" data-toggle="dropdown" href="#">
-            <svg class="feather feather-more-vertical" fill="none" height="16" stroke="currentColor" stroke-linecap="round"
-                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"
-                 xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="1"></circle>
-              <circle cx="12" cy="5" r="1"></circle>
-              <circle cx="12" cy="19" r="1"></circle>
-            </svg>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
-            <a class="dropdown-item" data-abc="true" href="#">See detail </a><a class="dropdown-item download"
-                                                                                data-abc="true">Download </a><a
-              class="dropdown-item edit" data-abc="true">Edit</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item trash" data-abc="true">Delete item</a>
+        <div class="no-wrap">
+          <div class="item-date text-muted text-sm d-none d-md-block"> Последнее действие:
+            {{ lastLoginInfo(user.last_login) }}
           </div>
         </div>
+        <div>
+          <div class="item-action dropdown">
+            <a class="text-muted" data-abc="true" data-toggle="dropdown" href="#">
+              <svg class="feather feather-more-vertical" fill="none" height="16" stroke="currentColor"
+                   stroke-linecap="round"
+                   stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"
+                   xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="12" cy="5" r="1"></circle>
+                <circle cx="12" cy="19" r="1"></circle>
+              </svg>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+              <a class="dropdown-item" data-abc="true" href="#">See detail </a><a class="dropdown-item download"
+                                                                                  data-abc="true">Download </a><a
+                class="dropdown-item edit" data-abc="true">Edit</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item trash" data-abc="true">Delete item</a>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
     </div>
   </div>
 
   <div v-else>
-   <h1>Загружаем данные</h1>
+    <h1>Загружаем данные</h1>
   </div>
-
 </template>
 
 <script>
 
 import axios from "axios";
+import {differenceInCalendarYears, formatDistanceToNow, parseISO} from 'date-fns';
+import {ru} from 'date-fns/locale'; // Импортируйте локаль, если хотите локализовать вывод
 
 export default {
   data() {
     return {
-      users:[],
+      users: [],
       isLoading: true
     };
   },
@@ -73,13 +85,34 @@ export default {
           });
     },
     lastLoginInfo(lastLogin) {
-      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; // Получение часового пояса пользователя
-      const lastLoginDate = parseISO(lastLogin); // Конвертация строки в объект Date
-      const zonedLastLoginDate = utcToZonedTime(lastLoginDate, timeZone); // Преобразование времени из UTC в часовой пояс пользователя
-      const now = zonedTimeToUtc(new Date(), timeZone); // Текущее время в часовом поясе пользователя
+      const loginDate = parseISO(lastLogin);
+      return formatDistanceToNow(loginDate, {addSuffix: true, locale: ru}); // Используйте 'ru' для русского языка
+    },
+    ageInfo(date) {
+      if (date) {
+        const age = differenceInCalendarYears(new Date(), parseISO(date));
+        return `${age} ${this.getAgeWord(age)}`;
+      }
+    },
+    getAgeWord(age) {
+      let lastDigit = age % 10;
+      let lastTwoDigits = age % 100;
 
-      return formatDistanceToNow(zonedLastLoginDate, { addSuffix: true, locale: yourLocale }); // Форматирование разницы времени
-    }
+      if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
+        return 'лет';
+      }
+
+      switch (lastDigit) {
+        case 1:
+          return 'год';
+        case 2:
+        case 3:
+        case 4:
+          return 'года';
+        default:
+          return 'лет';
+      }
+    },
 
   },
   created() {
@@ -250,6 +283,13 @@ a:focus, a:hover {
 
 list-item {
   background: white;
+}
+
+.user-list-enter-active, .user-list-leave-active {
+  transition: opacity 2.5s;
+}
+.user-list-enter, .user-list-leave-to /* .user-list-leave-active в версии 2.1.8+ */ {
+  opacity: 0;
 }
 
 </style>

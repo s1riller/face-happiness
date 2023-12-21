@@ -20,6 +20,7 @@ import SalesByCategory from "@/views/report/SalesByCategory.vue";
 import AverageOrderValuePerUser from "@/views/report/AverageOrderValuePerUser.vue"
 import UserTestResultsReport from "@/views/report/UserTestResultsReport.vue"
 import UsersList from "@/views/report/UsersList.vue";
+import ListSoldProducts from "@/views/report/ListSoldProducts.vue";
 const routes = [
     {path: "/", component: Home, name: 'Home'},
     {path: "/Test", component: Testing, name: 'Test'},
@@ -40,7 +41,8 @@ const routes = [
     {path: '/SalesByCategory', component: SalesByCategory, name: 'SalesByCategory'},
     {path: '/AverageOrderValuePerUser', component: AverageOrderValuePerUser, name: 'AverageOrderValuePerUser'},
     {path: '/UserTestResultsReport', component: UserTestResultsReport, name: 'UserTestResultsReport'},
-    {path: '/UsersList', component: UsersList, name: 'UsersList'}
+    {path: '/UsersList', component: UsersList, name: 'UsersList'},
+    {path: '/ListSoldProduct', component: ListSoldProducts, name: 'ListSoldProduct'}
 
 ];
 

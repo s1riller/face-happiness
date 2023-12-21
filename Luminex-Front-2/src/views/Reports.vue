@@ -9,6 +9,16 @@
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
+            <button class="btn" @click="$router.push({ name: 'ListSoldProduct' })">
+              <h3 class="card-title">Список проданных товаров</h3>
+            </button>
+            <!-- Здесь можно вставить графики или данные о продажах -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
             <button class="btn" @click="$router.push({ name: 'VolumeOfSales' })">
             <h3 class="card-title">Общий объем продаж</h3>
             </button>
